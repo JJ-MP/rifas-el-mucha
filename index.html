@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rifas El Mucha — Videos con IA</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold:    #C9A227;
+      --gold2:   #F0C040;
+      --black:   #080808;
+      --dark:    #111111;
+      --card:    #161616;
+      --border:  #2a2200;
+      --text:    #e8e8e8;
+      --muted:   #888;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      text-align: center;
+      padding: 56px 24px 40px;
+      border-bottom: 1px solid #1e1800;
+      background: radial-gradient(ellipse at top, #1a1200 0%, var(--black) 70%);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 80px,
+        rgba(201,162,39,0.03) 80px,
+        rgba(201,162,39,0.03) 81px
+      );
+    }
+
+    .logo-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #1a1200, #2a1e00);
+      border: 2px solid var(--gold);
+      border-radius: 6px;
+      padding: 6px 18px 4px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 30px rgba(201,162,39,0.3), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .logo-top {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 6px;
+      color: var(--gold);
+      display: block;
+    }
+    .logo-main {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 12vw, 88px);
+      letter-spacing: 4px;
+      color: #fff;
+      line-height: 1;
+      text-shadow:
+        0 0 40px rgba(201,162,39,0.5),
+        2px 2px 0 #000;
+      display: block;
+    }
+
+    .tagline {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 18px;
+      opacity: 0.8;
+    }
+
+    /* ── GOLD DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 0 24px;
+      margin: 48px auto 0;
+      max-width: 860px;
+    }
+    .divider-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .divider-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 4px;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    /* ── VIDEOS GRID ── */
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    .video-card {
+      background: var(--card);
+      border: 1px solid #2a2000;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .video-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,162,39,0.2);
+    }
+
+    .video-number {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 18px 0;
+    }
+    .num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+    .num-line { flex: 1; height: 1px; background: #2a2000; }
+
+    .video-wrapper {
+      position: relative;
+      margin: 12px 0 0;
+      background: #000;
+    }
+    video {
+      width: 100%;
+      display: block;
+      max-height: 520px;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .video-info {
+      padding: 16px 18px 20px;
+    }
+    .video-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 1.5px;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .video-desc {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .gold-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(201,162,39,0.08);
+      border: 1px solid rgba(201,162,39,0.25);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+    .dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px 48px;
+      border-top: 1px solid #1a1400;
+    }
+    footer p {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #333;
+    }
+    footer span { color: var(--gold); opacity: 0.5; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      header { padding: 40px 16px 32px; }
+      .videos-grid { grid-template-columns: 1fr; gap: 20px; }
+      main { padding: 32px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-badge">
+    <span class="logo-top">R I F A S</span>
+    <span class="logo-main">EL MUCHA</span>
+  </div>
+  <p class="tagline">✦ &nbsp; Producción de Videos con Inteligencia Artificial &nbsp; ✦</p>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-text">Videos Realizados</div>
+    <div class="divider-line"></div>
+  </div>
+</header>
+
+<!-- VIDEOS -->
+<main>
+  <div class="videos-grid">
+
+    <!-- Video 1 -->
+    <div class="video-card">
+      <div class="video-number">
+        <span class="num">VIDEO 01</span>
+        <div class="num-line"></div>
+      </div>
+      <div class="video-wrapper">
+        <video controls preload="metadata" playsinline>
+          <source src="videos/transformacion.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-info">
+        <div class="video-title">Transformación del Carro en el Logo</div>
+        <div class="video-desc">Animación de identidad de marca</div>
+        <div class="gold-tag"><span class="dot"></span> Intro / Stories</div>
+      </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-card">
+      <div class="video-number">
+        <span class="num">VIDEO 02</span>
+        <div class="num-line"></div>
+      </div>
+      <div class="video-wrapper">
+        <video controls preload="metadata" playsinline>
+          <source src="videos/revelacion.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-info">
+        <div class="video-title">Revelación del Premio</div>
+        <div class="video-desc">Animación dramática de presentación</div>
+        <div class="gold-tag"><span class="dot"></span> Anuncios / Impacto</div>
+      </div>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-card">
+      <div class="video-number">
+        <span class="num">VIDEO 03</span>
+        <div class="num-line"></div>
+      </div>
+      <div class="video-wrapper">
+        <video controls preload="metadata" playsinline>
+          <source src="videos/moneda.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-info">
+        <div class="video-title">Moneda + Armado del Carro</div>
+        <div class="video-desc">Animación de marca y ensamblaje</div>
+        <div class="gold-tag"><span class="dot"></span> Promoción de Boletos</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>Rifas El Mucha &nbsp;<span>✦</span>&nbsp; Producción con IA &nbsp;<span>✦</span>&nbsp; Táchira</p>
+</footer>
+
+</body>
+</html>
