@@ -243,8 +243,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/transformacion.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/transformacion.jpg" data-src="videos/transformacion.mp4" class="lazy-video">
+          <source data-src="videos/transformacion.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -261,8 +261,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/revelacion.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/revelacion.jpg" data-src="videos/revelacion.mp4" class="lazy-video">
+          <source data-src="videos/revelacion.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -279,8 +279,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/moneda.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/moneda.jpg" data-src="videos/moneda.mp4" class="lazy-video">
+          <source data-src="videos/moneda.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -297,8 +297,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/numeros.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/numeros.jpg" data-src="videos/numeros.mp4" class="lazy-video">
+          <source data-src="videos/numeros.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -315,8 +315,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/mapa.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/mapa.jpg" data-src="videos/mapa.mp4" class="lazy-video">
+          <source data-src="videos/mapa.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -333,8 +333,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/espacio.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/espacio.jpg" data-src="videos/espacio.mp4" class="lazy-video">
+          <source data-src="videos/espacio.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -351,8 +351,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/promo20.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/promo20.jpg" data-src="videos/promo20.mp4" class="lazy-video">
+          <source data-src="videos/promo20.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -369,8 +369,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/luna.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/luna.jpg" data-src="videos/luna.mp4" class="lazy-video">
+          <source data-src="videos/luna.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -387,8 +387,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/helicoptero.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/helicoptero.jpg" data-src="videos/helicoptero.mp4" class="lazy-video">
+          <source data-src="videos/helicoptero.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -405,8 +405,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/thor.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/thor.jpg" data-src="videos/thor.mp4" class="lazy-video">
+          <source data-src="videos/thor.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -423,8 +423,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/misil.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/misil.jpg" data-src="videos/misil.mp4" class="lazy-video">
+          <source data-src="videos/misil.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -441,8 +441,8 @@
         <div class="num-line"></div>
       </div>
       <div class="video-wrapper">
-        <video controls preload="metadata" playsinline>
-          <source src="videos/countdown.mp4" type="video/mp4">
+        <video controls preload="none" playsinline poster="thumbs/countdown.jpg" data-src="videos/countdown.mp4" class="lazy-video">
+          <source data-src="videos/countdown.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-info">
@@ -460,5 +460,21 @@
   <p>by Juan Nieto &nbsp;<span>✦</span>&nbsp; Producción con IA</p>
 </footer>
 
+<script>
+  const lazyVideos = document.querySelectorAll('video.lazy-video');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        if (!video.src) {
+          video.src = video.dataset.src;
+          video.load();
+        }
+        observer.unobserve(video);
+      }
+    });
+  }, { rootMargin: '200px' });
+  lazyVideos.forEach(v => observer.observe(v));
+</script>
 </body>
 </html>
